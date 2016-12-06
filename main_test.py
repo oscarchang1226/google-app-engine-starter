@@ -6,6 +6,7 @@ import main
 def test_get():
     app = webtest.TestApp(main.app)
 
-    response = app.get('/blog')
+    response = app.get('/')
 
     assert response.status_int == 200
+    assert response.body == 'Hello, World!'
